@@ -8,5 +8,9 @@ This code sample is meant to go along with an article I'm writing for my blog, w
 
 # Build Instructions
 
-The repository contains a Visual Studio 2013 project and solution file that's ready to build on Windows. All external dependencies are included in the repository, with the exception of NVAPI, which is excluded due to its licensing terms. To build with NVAPI, you'll want to download it from [Nvidia's developer website](https://developer.nvidia.com/nvapi), and unzip the file into Externals\NVAPI-352. If you already have it somewhere else, you can change the path to the include and the lib at the top of LowResRendering.cpp. Alternatively, you can also disable NVAPI entirely by defining "UseNVAPI_" to 0 at the top of LowResRendering.cpp
+The repository contains a Visual Studio 2013 project and solution file that's ready to build on Windows. All external dependencies are included in the repository, with the exception of NVAPI, which is excluded due to its licensing terms. This means that if you clone the repo and build the project as-is, you'll get the following error:
+
+`Cannot open include file: '../Externals/NVAPI-352/nvapi.h': No such file or directory`
+
+To build with NVAPI, you'll need to download it from [Nvidia's developer website](https://developer.nvidia.com/nvapi), and unzip the file into Externals\NVAPI-352. If you already have it somewhere else, you can change the path to the include and the lib at the top of LowResRendering.cpp. Alternatively, you can also disable NVAPI entirely by defining "UseNVAPI_" to 0 at the top of LowResRendering.cpp.
 
