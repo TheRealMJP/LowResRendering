@@ -248,8 +248,8 @@ void LowResRendering::InitializeNVAPI()
     rsDesc.SampleCount = 4;
     for(uint64 i = 0; i < 4; ++i)
     {
-        rsDesc.SamplePositionsX[i] = uint8(Round(SamplePositions1x[i].x * 16.0f));
-        rsDesc.SamplePositionsY[i] = uint8(Round(SamplePositions1x[i].y * 16.0f));
+        rsDesc.SamplePositionsX[i] = uint8(Clamp(SamplePositions1x[i].x * 16.0f, 0.0f, 15.0f));
+        rsDesc.SamplePositionsY[i] = uint8(Clamp(SamplePositions1x[i].y * 16.0f, 0.0f, 15.0f));
     };
 
     // This can also fail the user has an older Nvidia GPU that doesn't support programmable sample points
@@ -282,8 +282,8 @@ void LowResRendering::InitializeNVAPI()
     rsDesc.SampleCount = 8;
     for(uint64 i = 0; i < 8; ++i)
     {
-        rsDesc.SamplePositionsX[i] = uint8(Round(SamplePositions2x[i].x * 16.0f));
-        rsDesc.SamplePositionsY[i] = uint8(Round(SamplePositions2x[i].y * 16.0f));
+        rsDesc.SamplePositionsX[i] = uint8(Clamp(SamplePositions2x[i].x * 16.0f, 0.0f, 15.0f));
+        rsDesc.SamplePositionsY[i] = uint8(Clamp(SamplePositions2x[i].y * 16.0f, 0.0f, 15.0f));
     };
 
     status = NvAPI_D3D11_CreateRasterizerState(device, &rsDesc, &msaaLowResRS[1]);
