@@ -657,7 +657,7 @@ void LowResRendering::RenderParticles(const Timer& timer)
         context->PSSetShaderResources(0, 2, srvs);
     }
 
-    if(lowResMSAA)
+    if(AppSettings::RenderLowRes && lowResMSAA)
     {
         PIXEvent compositeEvent(L"Low-Res Resolve");
         ProfileBlock profileBlock(L"Low-Res Resolve");
