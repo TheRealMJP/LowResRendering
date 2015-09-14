@@ -4,7 +4,7 @@ This is a D3D11 sample project that demonstrates a technique for using MSAA to r
 
 To make sure that the low-resolution MSAA sample points line up with the sample points from the full-resolution render target, the sample makes use of the programmable sample point functionality found in Nvidia's second generation Maxwell GPU's. This is done by using the D3D11 driver extensions exposed through Nvidia's properietary NVAPI. If you don't have an Nvidia GPU, or you have an Nvidia GPU that doesn't support programmable sample points, the sample will automatically disable the functionality and remove the corresponding UI.
 
-This code sample is meant to go along with an article I'm writing for my blog, which should be released shortly.
+This code sample was done as part of an article for my blog, which you can find here: [http://mynameismjp.wordpress.com/2015/09/13/programmable-sample-points/](http://mynameismjp.wordpress.com/2015/09/13/programmable-sample-points/)
 
 # Build Instructions
 
